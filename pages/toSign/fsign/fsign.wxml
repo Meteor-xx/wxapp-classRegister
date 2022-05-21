@@ -1,23 +1,22 @@
-<!--pages/toSign/fsign/fsign.wxml-->
-<!-- <view class="head">
-  <view class="pwd">
-    <view class="container">
-    </view>
+<view class='identification'>
+  <view class='camera' wx:if="{{ showCamera }}">
+    <camera device-position="front" flash="off" binderror="error"></camera>
   </view>
-</view> -->
-
-<view class="head">
-  <camera v-if="showcamera" device-position="front" resolution="high" style="width: 100%; height: 100vh;">
-    <view class="cover_bg">
-      <view class="cover_face" :style="{backgroundColor: bgcolor}">
-        <view class="cover_text">{{tipsText}}</view>
-      </view>
-    </view>
-  </camera>
-  <view class="photo_img" v-else>
-    <image :src="tempImg" mode=""></image>
-  </view>
-  <view class="confirm">
-    <button type="primary" bindtap="fsign">进行识别签到</button>
-  </view>
+</view>
+<view class='message' wx:if="{{msgStatus == 0}}">
+  <text>将脸对准圆框内，即可自动扫描识别</text>
+  <view wx:if="{{ recordStatus == 0 }}">准备开始录像</view>
+  <view wx:elif="{{ recordStatus == 1 }}">{{countDownNum}}s</view>
+  <view wx:else>录制结束</view>
+</view>
+<view class='message' wx:if="{{msgStatus == 1}}">
+  <image src='{{host}}user/msgsuccess.png' mode='widthFix'></image>
+  <view class='msgTitle'>认证成功</view>
+  <view class='msgContent'>感谢您对我们的信任</view>
+  <navigator open-type='switchTab' url='/pages/index/index' class='nextBtn'>进入首页</navigator>
+</view>
+<view class='message' wx:if="{{msgStatus == -1}}">
+  <image src='{{host}}user/msgerror.png' mode='widthFix'></image>
+  <view class='msgTitle'>认证成功</view>
+  <view bindtap='rescan' class='nextBtn'>重新扫描</view>
 </view>
