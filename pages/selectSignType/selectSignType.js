@@ -25,10 +25,15 @@ Page({
       wx.navigateTo({
         url: '../gSign/gSign?cid='+this.data.cid,
       })
-    }else{
+    }else if(id == 3){
       //位置签到
       wx.navigateTo({
         url: '../lSign/lSign?cid='+this.data.cid,
+      })
+    }else{
+      //人脸识别签到
+      wx.navigateTo({
+        url: '../fSign/fSign?cid='+this.data.cid,
       })
     }
   },

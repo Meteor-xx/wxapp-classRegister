@@ -1,0 +1,23 @@
+<!--pages/toSign/fsign/fsign.wxml-->
+<!-- <view class="head">
+  <view class="pwd">
+    <view class="container">
+    </view>
+  </view>
+</view> -->
+
+<view class="head">
+  <camera v-if="showcamera" device-position="front" resolution="high" style="width: 100%; height: 100vh;">
+    <view class="cover_bg">
+      <view class="cover_face" :style="{backgroundColor: bgcolor}">
+        <view class="cover_text">{{tipsText}}</view>
+      </view>
+    </view>
+  </camera>
+  <view class="photo_img" v-else>
+    <image :src="tempImg" mode=""></image>
+  </view>
+  <view class="confirm">
+    <button type="primary" bindtap="fsign">进行识别签到</button>
+  </view>
+</view>

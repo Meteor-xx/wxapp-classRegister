@@ -26,3 +26,10 @@
       <image src="../../images/more.png"></image>
     </view>
 </view>
+
+<view class="head" bindtap="selectSignType" data-id="4">
+    <view class="name">人脸识别签到</view>
+    <view class="more">
+      <image src="../../images/more.png"></image>
+    </view>
+</view>

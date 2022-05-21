@@ -16,7 +16,7 @@ App({
     }
   },
   globalData: {
-    url:"http://localhost:3333/w-api",
+    url:"http://192.168.1.12:3333/w-api",
     userInfo: null,
     openid:'',
     key:'', //位置服务key

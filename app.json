@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/toSign/fsign/fsign",
     "pages/index/index",
     "pages/about/about",
     "pages/aboutDetail/aboutDetail",
@@ -21,7 +22,9 @@
     "pages/toSign/gsign/gsign",
     "pages/toSign/lsign/lsign",
     "pages/createdSign/createdSign",
-    "pages/joinedSign/joinedSign"
+    "pages/joinedSign/joinedSign",
+    "pages/fSign/fSign"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
